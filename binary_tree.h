@@ -38,14 +38,15 @@ class LinkedBinaryTree {
     protected:
         void preorder(Node* v, std::list<Position<E> >& pl) const;
     public:
-        LinkedBinaryTree();
+        LinkedBinaryTree()
+        :_root(NULL), n(0);
         int size() const;
         bool empty() const;
         Position<E> root() const;
-        std::list<Position<E> > positions() const;
-        void addRoot();
+        LinkedBinaryTree<E> addRoot();
         void expandExternal(const Position& p);
         Position<E> removeAboveExternal(const Position& p);
+        std::list<Position<E> > positions() const;
 }
 
 #endif
